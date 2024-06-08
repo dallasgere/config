@@ -20,7 +20,7 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 vim.keymap.set("n", "<C-c>", "<Esc>")
 
 -- copy and pase
-vim.keymap.set("v", "<leader>c", ":w !pbcopy")
+vim.keymap.set("v", "<leader>c", ":w !pbcopy<CR>")
 vim.keymap.set("n", "<leader>v", "!pbpaste")
 
 -- lsp
