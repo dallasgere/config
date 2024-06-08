@@ -7,7 +7,8 @@ return {
         vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
         vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
         vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-        vim.keymap.set("n", "<space>w", ":Telescope file_browser<CR>")
+        vim.keymap.set("n", "<space>w", ":Telescope file_browser path=%:p:h select_buffer=true hidden=true<CR>", { noremap = true })
+        vim.keymap.set("n", "<space>d", ":Telescope file_browser hidden=true<CR>")
 
         -- how to load reamaps for file browser
         local fb_actions = require "telescope".extensions.file_browser.actions
@@ -18,7 +19,7 @@ return {
         require("telescope").setup {
           extensions = {
             file_browser = {
-              theme = "ivy",
+              -- theme = "ivy",
               -- disables netrw and use telescope-file-browser in its place
               hijack_netrw = true,
               mappings = {

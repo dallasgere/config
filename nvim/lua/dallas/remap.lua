@@ -24,5 +24,5 @@ vim.keymap.set("v", "<leader>c", ":w !pbcopy")
 vim.keymap.set("n", "<leader>v", "!pbpaste")
 
 -- lsp
--- vim.api.nvim_set_keymap("n", "<leader>j", "<cmd>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<leader>b", "<cmd>lua vim.lsp.buf.declaration()<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>j", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
