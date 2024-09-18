@@ -30,6 +30,10 @@ colors:
     background: "#161616"
     foreground: "#ffffff"
 
+  cursor:
+    text: "#000000"
+    cursor: "#ffffff"
+
   search:
     matches:
       foreground: '#000000'
