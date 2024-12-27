@@ -1,7 +1,9 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.cmd('colorscheme slate')
+-- turning off the background
+-- vim.api.nvim_set_hl(0, "Normal", {guibg=NONE, ctermbg=NONE})
+-- vim.api.nvim_set_hl(0, "NormalFloat", {guibg=NONE})
 
 -- vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
 -- vim.opt.guicursor = "n-v-c-i-ci-ve:ver25,r-cr-o:hor20"
@@ -38,3 +40,10 @@ vim.g.netrw_banner = 0
 
 -- trying to get rid of grey bar
 -- vim.opt.signcolumn = "no"
+
+-- vim.cmd [[
+-- highlight Normal guibg=none
+-- highlight NonText guibg=none
+-- highlight Normal ctermbg=none
+-- highlight NonText ctermbg=none
+-- ]]
