@@ -1,3 +1,2 @@
 return {
-    "rebelot/kanagawa.nvim",
 }
