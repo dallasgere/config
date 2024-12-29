@@ -14,9 +14,6 @@ return {
                 enable = true,
                 disable = { "javascriptreact", "typescriptreact", "tsx" }
             },
-            autotag = {
-                enable = true,
-            }
         })
     end
 }

@@ -1,3 +1,4 @@
+-- always have relative line numbers
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -5,17 +6,21 @@ vim.opt.relativenumber = true
 -- vim.api.nvim_set_hl(0, "Normal", {guibg=NONE, ctermbg=NONE})
 -- vim.api.nvim_set_hl(0, "NormalFloat", {guibg=NONE})
 
+-- cursor options
 -- vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
 -- vim.opt.guicursor = "n-v-c-i-ci-ve:ver25,r-cr-o:hor20"
 vim.opt.guicursor=""
 
+-- tab options
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
+-- smart indent based on files
 vim.opt.smartindent = true
 
+-- idk
 vim.opt.wrap = false
 
 vim.opt.swapfile = false
@@ -32,18 +37,11 @@ vim.opt.scrolloff = 8
 vim.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
--- vim.opt.colorcolumn = "81"
-
+-- setting the leader key to space bar
 vim.g.mapleader = " "
 
+-- adjusting netrw
 vim.g.netrw_banner = 0
 
--- trying to get rid of grey bar
--- vim.opt.signcolumn = "no"
-
--- vim.cmd [[
--- highlight Normal guibg=none
--- highlight NonText guibg=none
--- highlight Normal ctermbg=none
--- highlight NonText ctermbg=none
--- ]]
+-- guide for column size
+-- vim.opt.colorcolumn = "81"

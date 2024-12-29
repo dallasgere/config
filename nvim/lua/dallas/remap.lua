@@ -13,9 +13,6 @@ vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
--- i think this will seachs
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
-
 -- remaping escape
 vim.keymap.set("n", "<C-c>", "<Esc>")
 
