@@ -6,6 +6,16 @@ vim.opt.relativenumber = true
 -- vim.api.nvim_set_hl(0, "Normal", {guibg=NONE, ctermbg=NONE})
 -- vim.api.nvim_set_hl(0, "NormalFloat", {guibg=NONE})
 
+-- setting indent for certain files
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "javascript", "javascriptreact", "typescript", "typescriptreact", "js", "ts", "jsx", "tsx" },
+    callback = function()
+        vim.opt_local.tabstop = 2
+        vim.opt_local.shiftwidth = 2
+        vim.opt_local.expandtab = true
+    end,
+})
+
 -- cursor options
 -- vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
 -- vim.opt.guicursor = "n-v-c-i-ci-ve:ver25,r-cr-o:hor20"
