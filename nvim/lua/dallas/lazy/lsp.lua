@@ -35,6 +35,7 @@ return {
         -- Configure Mason-LSPConfig
         require("mason-lspconfig").setup({
             ensure_installed = {
+                "html",
                 "htmx"
             },
             handlers = {
@@ -57,6 +58,14 @@ return {
                                 }
                             }
                         }
+                    }
+                end,
+
+                -- html handler
+                ["html"] = function()
+                    require("lspconfig").html.setup {
+                        capabilities = capabilities,
+                        filetypes = {"html", "htmldjango"},
                     }
                 end,
 
