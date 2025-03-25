@@ -1,5 +1,8 @@
 return {
+    -- the name of the actual plugin
     "neovim/nvim-lspconfig",
+
+    -- dependencies for lsp
     dependencies = {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
@@ -8,17 +11,16 @@ return {
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
         "hrsh7th/nvim-cmp",
-        "L3MON4D3/LuaSnip",
-        "saadparwaiz1/cmp_luasnip",
         "j-hui/fidget.nvim",
     },
 
+    -- config function
     config = function()
         -- packages I need
         local cmp = require('cmp')
         local cmp_lsp = require("cmp_nvim_lsp")
 
-        -- Set up LSP capabilities
+        -- set up LSP capabilities
         local capabilities = vim.tbl_deep_extend(
             "force",
             {},
@@ -26,27 +28,27 @@ return {
             cmp_lsp.default_capabilities()
         )
 
-        -- Set up fidget (loading spinner)
+        -- set up fidget (loading spinner)
         require("fidget").setup({})
 
-        -- Set up Mason (LSP installer)
+        -- set up Mason (LSP installer)
         require("mason").setup()
 
-        -- Configure Mason-LSPConfig
+        -- configure Mason-LSPConfig
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "html",
                 "htmx"
             },
             handlers = {
-                -- Default handler for all LSPs
+                -- default handler for all LSPs
                 function(server_name)
                     require("lspconfig")[server_name].setup {
                         capabilities = capabilities
                     }
                 end,
 
-                -- Custom handler for Lua language server
+                -- custom handler for lua language server
                 ["lua_ls"] = function()
                     require("lspconfig").lua_ls.setup {
                         capabilities = capabilities,
@@ -65,11 +67,11 @@ return {
                 ["html"] = function()
                     require("lspconfig").html.setup {
                         capabilities = capabilities,
-                        filetypes = {"html", "htmldjango"},
+                        filetypes = {"html"},
                     }
                 end,
 
-                -- Custom handler for HTMX language server
+                -- custom handler for HTMX language server
                 ["htmx"] = function()
                     require("lspconfig").htmx.setup {
                         capabilities = capabilities,
@@ -78,15 +80,11 @@ return {
             }
         })
 
-        -- Setup nvim-cmp for autocompletion
+        -- setup nvim-cmp for autocompletion
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
         cmp.setup({
-            snippet = {
-                expand = function(args)
-                    require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-                end,
-            },
+            snippet = {},
             mapping = cmp.mapping.preset.insert({
                 ['<S-TAB>'] = cmp.mapping.select_prev_item(cmp_select),
                 ['<TAB>'] = cmp.mapping.select_next_item(cmp_select),
@@ -95,13 +93,12 @@ return {
             }),
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
-                { name = 'luasnip' }, -- For luasnip users.
             }, {
                     { name = 'buffer' },
                 })
         })
 
-        -- Configure diagnostic display
+        -- configure diagnostic display
         vim.diagnostic.config({
             float = {
                 focusable = false,

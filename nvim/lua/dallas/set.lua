@@ -3,12 +3,12 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 
 -- turning off the background
-vim.api.nvim_set_hl(0, "Normal", {guibg=NONE, ctermbg=NONE})
-vim.api.nvim_set_hl(0, "NormalFloat", {guibg=NONE})
+-- vim.api.nvim_set_hl(0, "Normal", {guibg=NONE, ctermbg=NONE})
+-- vim.api.nvim_set_hl(0, "NormalFloat", {guibg=NONE})
 
 -- setting indent for certain files
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "javascript", "javascriptreact", "typescript", "typescriptreact", "js", "ts", "jsx", "tsx" },
+    pattern = { "javascript", "javascriptreact", "typescript", "typescriptreact", "js", "ts", "jsx", "tsx", "css", "html" },
     callback = function()
         vim.opt_local.tabstop = 2
         vim.opt_local.shiftwidth = 2
