@@ -36,10 +36,8 @@ return {
 
         -- configure Mason-LSPConfig
         require("mason-lspconfig").setup({
-            ensure_installed = {
-                "html",
-                "htmx"
-            },
+            ensure_installed = { "html" },
+
             handlers = {
                 -- default handler for all LSPs
                 function(server_name)
@@ -68,13 +66,6 @@ return {
                     require("lspconfig").html.setup {
                         capabilities = capabilities,
                         filetypes = {"html"},
-                    }
-                end,
-
-                -- custom handler for HTMX language server
-                ["htmx"] = function()
-                    require("lspconfig").htmx.setup {
-                        capabilities = capabilities,
                     }
                 end,
             }
