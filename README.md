@@ -16,6 +16,3 @@
     - once ~/.config/nvim exists with these contents you can start nvim and it should download everything
     - you can run :Lazy within neovim to sync everything and view packages
 
-# testing git client
-
-- this is a test
