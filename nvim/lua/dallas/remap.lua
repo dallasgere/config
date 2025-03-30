@@ -16,10 +16,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 -- remaping escape
 vim.keymap.set("n", "<C-c>", "<Esc>")
 
--- copy and pase
-vim.keymap.set("v", "<leader>c", ":w !pbcopy<CR>")
-vim.keymap.set("n", "<leader>v", "!pbpaste")
-
 -- lsp
 -- vim.api.nvim_set_keymap("n", "<leader>b", "<cmd>lua vim.lsp.buf.declaration()<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>j", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
