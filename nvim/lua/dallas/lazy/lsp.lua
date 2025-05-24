@@ -37,6 +37,7 @@ return {
         -- configure Mason-LSPConfig
         require("mason-lspconfig").setup({
             ensure_installed = { "html" },
+            automatic_enable = false,
 
             handlers = {
                 -- default handler for all LSPs
@@ -99,6 +100,14 @@ return {
                 header = "",
                 prefix = "",
             },
+        })
+
+        -- format on save
+        vim.api.nvim_create_autocmd('BufWritePre', {
+            pattern = { '*.js', '*.ts', '*.tsx', '*.jsx', '*.html', '*.css' },
+            callback = function()
+                vim.lsp.buf.format()
+            end
         })
     end
 }
