@@ -37,7 +37,6 @@ return {
         -- configure Mason-LSPConfig
         require("mason-lspconfig").setup({
             ensure_installed = { "html" },
-            automatic_enable = false,
 
             handlers = {
                 -- default handler for all LSPs
