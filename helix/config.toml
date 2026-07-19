@@ -1,0 +1,9 @@
+theme = "tokyonight_moon"
+
+[editor]
+line-number = "relative"
+auto-format = true
+color-modes = true
+
+[editor.lsp]
+display-messages = true
