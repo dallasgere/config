@@ -16,6 +16,6 @@ return {
         },
     },
     build = function()
-        require('blink.cmp').build():wait(60000)
-    end,
+        require('blink.cmp').build():pwait()
+    end
 }
