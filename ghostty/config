@@ -13,7 +13,7 @@ font-size = 13
 font-family = "Jetbrains Mono NL"
 
 background-opacity = 0.80
-background-blur = true
+background-blur = 80
 
 # theme = "Rose Pine"
 theme = "TokyoNight Moon"
